@@ -9,7 +9,7 @@ const App = () => {
     const fetchApps = async () => {
       try {
         const appList = await getAppList();
-        setApps(appList.slice(0, 2000)); // Obtener las primeras 10 apps como ejemplo
+        setApps(appList.slice(2000, 2080)); 
       } catch (error) {
         console.error(error);
       }

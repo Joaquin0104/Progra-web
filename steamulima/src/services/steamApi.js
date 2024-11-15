@@ -8,7 +8,7 @@ export const getAppList = async () => {
     const response = await axios.get(`${BASE_URL}/ISteamApps/GetAppList/v2/`);
     return response.data.applist.apps;
   } catch (error) {
-    console.error('Error fetching app list:', error);
+    console.error('Error 404 app list:', error);
     throw error;
   }
 };
@@ -18,7 +18,7 @@ export const getAppDetails = async (appId) => {
     const response = await axios.get(`${STORE_URL}/appdetails?appids=${appId}`);
     return response.data[appId].data;
   } catch (error) {
-    console.error(`Error fetching details for appId ${appId}:`, error);
+    console.error(`Error 404 details for appId ${appId}:`, error);
     throw error;
   }
 };

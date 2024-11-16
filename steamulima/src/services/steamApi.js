@@ -1,8 +1,17 @@
 import axios from 'axios';
-
-const BASE_URL = '/api';
 const STORE_URL = 'https://store.steampowered.com/api';
 
+const BASE_URL = '/store-api/api';
+
+export const getAppDetails = async (appId) => {
+  try {
+    const response = await axios.get(`${BASE_URL}/appdetails?appids=${appId}`);
+    return response.data[appId].data;
+  } catch (error) {
+    console.error(`Error fetching details for appId ${appId}:`, error);
+    throw error;
+  }
+};
 export const getAppList = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/ISteamApps/GetAppList/v2/`);
@@ -13,12 +22,10 @@ export const getAppList = async () => {
   }
 };
 
-export const getAppDetails = async (appId) => {
-  try {
-    const response = await axios.get(`${STORE_URL}/appdetails?appids=${appId}`);
-    return response.data[appId].data;
-  } catch (error) {
-    console.error(`Error 404 details for appId ${appId}:`, error);
-    throw error;
-  }
+
+// Lista simulada de juegos destacados
+export const getFeaturedGames = async () => {
+  const featuredGameIds = [107410, 570, 440, 730, 578080]; // IDs de juegos populares
+  const promises = featuredGameIds.map((id) => getAppDetails(id));
+  return Promise.all(promises);
 };

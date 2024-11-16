@@ -5,10 +5,10 @@ export default defineConfig({
   plugins: [react()],
   server: {
     proxy: {
-      '/api': {
-        target: 'https://api.steampowered.com',
+      '/store-api': {
+        target: 'https://store.steampowered.com',
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api/, ''),
+        rewrite: (path) => path.replace(/^\/store-api/, ''),
       },
     },
   },

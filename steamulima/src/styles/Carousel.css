@@ -1,0 +1,105 @@
+body {
+  display: flex; /* Habilita el flexbox */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  min-height: 100vh; /* Asegura que el contenedor ocupe toda la altura de la ventana */
+  background-color: #0b0c10; /* Fondo de la página similar al de Steam */
+  margin: 0; /* Elimina márgenes por defecto */
+}
+
+.carousel {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px; /* Ancho máximo del carrusel */
+  margin: auto; /* Centra horizontalmente */
+  overflow: hidden; /* Ocultar el desbordamiento */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
+  background-color: #1b2838; /* Fondo similar al de Steam */
+}
+
+.carousel-content {
+  display: flex;
+  transition: transform 0.5s ease; /* Transición suave */
+}
+
+.carousel-image img {
+  width: 700px;
+  height: 100%; /* Imagen responsiva */
+  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+}
+
+.carousel-details {
+  padding: 20px;
+  background-color: #2a475e; /* Fondo para los detalles */
+  border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
+  color: #ffffff; /* Color del texto */
+}
+
+h3 {
+  margin: 0 0 10px; /* Margen para el título */
+  font-size: 1.5em; /* Tamaño de fuente para el título */
+  color: #ffffff; /* Color del título */
+}
+
+.screenshots-gallery {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  position: relative;
+}
+
+.screenshot-item img {
+  max-width: 200px;
+  height: auto;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.screenshot-item img:hover {
+  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+}
+
+.tag {
+  display: inline-block;
+  background-color: #ffcc00; /* Color de fondo para la etiqueta */
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-top: 10px;
+  color: #333; /* Color del texto de la etiqueta */
+}
+
+.game-price {
+  margin-top: 10px; /* Margen para el precio */
+  font-size: 1.2em; /* Tamaño de fuente para el precio */
+  color: #00b300; /* Color para el precio */
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
+  border: none; /* Sin borde */
+  padding: 10px; /* Relleno para los botones */
+  cursor: pointer; /* Cambiar cursor a puntero */
+  border-radius: 50%; /* Botones circulares */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para los botones */
+  color: #ffffff; /* Color del icono */
+  transition: background-color 0.2s; /* Transición para el hover */
+}
+
+.carousel-btn.left {
+  left: 10px; /* Posición del botón izquierdo */
+}
+
+.carousel-btn.right {
+  right: 10px; /* Posición del botón derecho */
+}
+
+.carousel-btn:hover {
+  background-color: rgba(255, 255, 255, 0.5); /* Cambiar fondo al pasar el mouse */
+}

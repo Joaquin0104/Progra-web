@@ -1,0 +1,157 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1b2838;
+    color: white;
+    z-index: 1000; 
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo img {
+    height: 30px;
+    margin-right: 10px;
+  }
+  
+  .nav {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1; 
+  }
+  
+  .nav a {
+    margin: 0 10px;
+    color: #c6d4df;
+    text-decoration: none;
+  }
+  
+  .nav a:hover {
+    color: white;
+  }
+  
+  .actions {
+    display: flex;
+    align-items: center;
+    margin-right: 30px; 
+  }
+  
+  .install-btn {
+    background-color: #5c7e10;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    margin-right: 10px;
+    cursor: pointer;
+  }
+  
+  .install-btn:hover {
+    background-color: #4a6510;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-btn {
+    background: none;
+    border: none;
+    color: #c6d4df;
+    cursor: pointer;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #1b2838;
+    min-width: 100px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: #c6d4df;
+    padding: 8px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+    background-color: #3a4553;
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  .dropdown:hover .dropdown-btn {
+    color: white;
+  }
+  
+  main {
+    padding-top: 60px; 
+  }
+  .sub-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #2a475e;
+    padding: 10px 20px;
+    color: white;
+    font-size: 14px;
+  }
+  
+  .sub-nav a {
+    color: #c6d4df;
+    text-decoration: none;
+    margin-right: 20px;
+  }
+  
+  .sub-nav a:hover {
+    color: white;
+  }
+  
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #1b2838;
+    border-radius: 3px;
+    padding: 2px 5px;
+  }
+  
+  .search-bar input {
+    border: none;
+    background: none;
+    color: white;
+    outline: none;
+    font-size: 14px;
+    padding: 5px;
+  }
+  
+  .search-bar button {
+    border: none;
+    background: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 5px;
+  }
+  
+  

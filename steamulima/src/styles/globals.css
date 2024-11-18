@@ -1,157 +1,81 @@
-
 body {
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
+    background-color: #1b2838; /* Fondo similar al de Steam */
   }
   
-  .header {
+  .steam-header {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100%; /* Asegura que el header ocupe todo el ancho */
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: #1b2838;
+    justify-content: space-between; /* Espaciado uniforme entre logo, nav-links, y user-actions */
+    align-items: center; /* Centra verticalmente los elementos */
+    padding: 10px 40px; /* Ajusta el padding para evitar desbalance */
+    background-color: #1b2838; /* Fondo del header */
     color: white;
-    z-index: 1000; 
+    font-family: Arial, sans-serif;
+    z-index: 1000; /* Asegura que el header esté siempre encima de otros elementos */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar relieve */
+  }
+  
+  .nav-links {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente los enlaces dentro del contenedor */
+    gap: 20px; /* Espacio uniforme entre los enlaces */
+    flex: 1; /* Hace que el nav ocupe espacio entre logo y user-actions */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .nav-links a.active {
+    color: #5cacee; /* Color azul para el enlace activo */
+    text-decoration: underline;
   }
   
   .logo {
-    display: flex;
-    align-items: center;
-  }
-  
+    margin-right: auto; /* Empuja el logo hacia la izquierda */
+    
+}
+
   .logo img {
-    height: 30px;
-    margin-right: 10px;
+    height: 40px;
   }
   
-  .nav {
-    display: flex;
-    justify-content: center;
-    flex-grow: 1; 
-  }
-  
-  .nav a {
-    margin: 0 10px;
-    color: #c6d4df;
-    text-decoration: none;
-  }
-  
-  .nav a:hover {
-    color: white;
-  }
-  
-  .actions {
+  .user-actions {
     display: flex;
     align-items: center;
-    margin-right: 30px; 
+    top: 0;
+    gap: 10px;
+    margin-left: auto; /* Empuja las acciones hacia la derecha */
+    align-self: flex-start; /* Alinea el nav arriba dentro del header */
+    margin-top: 0;
   }
   
   .install-btn {
-    background-color: #5c7e10;
+    background-color: #5c941f;
     color: white;
     border: none;
     padding: 5px 10px;
-    margin-right: 10px;
+    border-radius: 3px;
     cursor: pointer;
   }
   
   .install-btn:hover {
-    background-color: #4a6510;
+    background-color: #6bbd26; /* Cambia el color al pasar el cursor */
   }
   
-  .dropdown {
-    position: relative;
+  .arrow-down {
+    border: solid white;
+    border-width: 0 2px 2px 0;
     display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    margin-left: 5px;
   }
-  
-  .dropdown-btn {
-    background: none;
-    border: none;
-    color: #c6d4df;
-    cursor: pointer;
-  }
-  
-  .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #1b2838;
-    min-width: 100px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-  }
-  
-  .dropdown-content a {
-    color: #c6d4df;
-    padding: 8px 16px;
-    text-decoration: none;
-    display: block;
-  }
-  
-  .dropdown-content a:hover {
-    background-color: #3a4553;
-  }
-  
-  .dropdown:hover .dropdown-content {
-    display: block;
-  }
-  
-  .dropdown:hover .dropdown-btn {
-    color: white;
-  }
-  
-  main {
-    padding-top: 60px; 
-  }
-  .sub-nav {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #2a475e;
-    padding: 10px 20px;
-    color: white;
-    font-size: 14px;
-  }
-  
-  .sub-nav a {
-    color: #c6d4df;
-    text-decoration: none;
-    margin-right: 20px;
-  }
-  
-  .sub-nav a:hover {
-    color: white;
-  }
-  
-  .search-bar {
-    display: flex;
-    align-items: center;
-    background-color: #1b2838;
-    border-radius: 3px;
-    padding: 2px 5px;
-  }
-  
-  .search-bar input {
-    border: none;
-    background: none;
-    color: white;
-    outline: none;
-    font-size: 14px;
-    padding: 5px;
-  }
-  
-  .search-bar button {
-    border: none;
-    background: none;
-    color: white;
-    cursor: pointer;
-    font-size: 16px;
-    padding: 5px;
-  }
-  
   

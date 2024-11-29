@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: 90%;
   max-width: 1200px; /* Ancho máximo del carrusel */
   margin: auto; /* Centra horizontalmente */
   overflow: hidden; /* Ocultar el desbordamiento */
@@ -21,21 +21,23 @@ body {
 }
 
 .carousel-content {
-  display: flex;
   transition: transform 0.5s ease; /* Transición suave */
+  display:ruby;
 }
 
 .carousel-image img {
-  width: 700px;
+  flex:80;
   height: 100%; /* Imagen responsiva */
   border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
+  padding: 20px;  
 }
 
 .carousel-details {
+  flex:20;
   padding: 20px;
-  background-color: #2a475e; /* Fondo para los detalles */
   border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
   color: #ffffff; /* Color del texto */
+  box-sizing: border-box;
 }
 
 h3 {

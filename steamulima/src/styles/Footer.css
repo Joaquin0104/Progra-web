@@ -1,0 +1,61 @@
+/* Estilo general del footer */
+.footer {
+    background-color: #171d25;
+    color: #c7d5e0;
+    padding: 20px 40px;
+    font-size: 0.9em;
+  }
+  
+  .footer a {
+    color: #66c0f4;
+    text-decoration: none;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Sección superior del footer */
+  .footer-top {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .footer-logo img {
+    width: 100px; /* Ajusta el tamaño del logo */
+    margin-bottom: 10px;
+  }
+  
+  .footer-top p {
+    margin: 0;
+    line-height: 1.5;
+  }
+  
+  /* Sección inferior del footer */
+  .footer-bottom {
+    border-top: 1px solid #39454f;
+    padding-top: 10px;
+  }
+  
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Permite que las líneas se ajusten */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 15px; /* Espaciado entre los elementos */
+  }
+  
+  .footer-links li {
+    margin: 0;
+  }
+  
+  .footer-links a {
+    color: #c7d5e0;
+  }
+  
+  .footer-links a:hover {
+    color: #ffffff; /* Color blanco al pasar el mouse */
+  }
+  

@@ -5,7 +5,7 @@ const BASE_URL = '/store-api/api';
 
 export const getAppDetails = async (appId) => {
   try {
-    const response = await axios.get(`${BASE_URL}/appdetails?appids=${appId}`);
+    const response = await axios.get(`${BASE_URL}/appdetails?appids=${appId}&cc=pe&l=spanish&currency=pen`);
     return response.data[appId].data;
   } catch (error) {
     console.error(`Error fetching details for appId ${appId}:`, error);
@@ -27,5 +27,12 @@ export const getAppList = async () => {
 export const getFeaturedGames = async () => {
   const featuredGameIds = [107410, 570, 440, 730, 578080]; // IDs de juegos populares
   const promises = featuredGameIds.map((id) => getAppDetails(id));
+  return Promise.all(promises);
+};
+
+// Lista simulada de ofertas especiales
+export const getSpecialOffers = async () => {
+  const offersGameIds = [1659420,2669320, 2488620, 1040200]; 
+  const promises = offersGameIds.map((id) => getAppDetails(id));
   return Promise.all(promises);
 };

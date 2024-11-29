@@ -12,7 +12,7 @@ body {
     justify-content: space-between; /* Espaciado uniforme entre logo, nav-links, y user-actions */
     align-items: center; /* Centra verticalmente los elementos */
     padding: 10px 40px; /* Ajusta el padding para evitar desbalance */
-    background-color: #1b2838; /* Fondo del header */
+    background-color: #171d25; /* Fondo del header */
     color: white;
     font-family: Arial, sans-serif;
     z-index: 1000; /* Asegura que el header esté siempre encima de otros elementos */
@@ -79,3 +79,67 @@ body {
     margin-left: 5px;
   }
   
+  /* General Layout */
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Asegura que use toda la altura de la ventana */
+}
+
+/* Header */
+header {
+  flex-shrink: 0; /* El header mantiene su tamaño fijo */
+  background-color: #1b2838;
+}
+
+/* Footer */
+footer {
+  flex-shrink: 0; /* El footer mantiene su tamaño fijo */
+  background-color: #1b2838;
+  color: #c7d5e0;
+}
+
+/* Contenido principal */
+.main-content {
+  flex-grow: 1; /* Ocupa el espacio restante entre el header y el footer */
+  display: flex;
+  flex-direction: row; /* Alinea las columnas horizontalmente */
+}
+
+/* Columnas */
+.left-sidebar {
+  flex: 20; /* Representa el 13% del ancho */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box; /* Incluye padding en el ancho total */
+}
+
+.center-content {
+  flex: 60; /* Representa el 70% del ancho */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.right-sidebar {
+  flex: 20; /* Representa el 13% del ancho */
+  color: white;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column; /* Las columnas se apilan en dispositivos pequeños */
+  }
+
+  .left-sidebar,
+  .right-sidebar {
+    flex: 100; /* Ocupan todo el ancho */
+  }
+
+  .center-content {
+    flex: 100; /* También ocupa todo el ancho */
+  }
+}

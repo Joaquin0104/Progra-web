@@ -6,6 +6,7 @@
     align-items: center;
     background-color: #1b4d80; /* Azul Steam */
     padding: 10px 20px;
+    margin-top: 90px; /* Espacio superior */
   }
   
   .nav-links {

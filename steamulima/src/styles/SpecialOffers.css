@@ -1,0 +1,99 @@
+.special-offers {
+    background-color: #1b2838;
+    padding: 20px;
+    color: white;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .header h2 {
+    font-size: 1.5em;
+    color: #ffffff;
+  }
+  
+  .view-more {
+    background-color: transparent;
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .view-more:hover {
+    background-color: #ffffff;
+    color: #1b2838;
+  }
+  
+  .carousel {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    padding: 10px;
+  }
+  
+  .carousel::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .offer-card {
+    background-color: #2a475e;
+    border-radius: 8px;
+    overflow: hidden;
+    flex: 0 0 250px;
+    position: relative;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .offer-image {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .offer-details {
+    padding: 10px;
+  }
+  
+  .offer-details h3 {
+    font-size: 1.1em;
+    margin: 0;
+    color: #ffffff;
+  }
+  
+  .offer-details p {
+    font-size: 0.9em;
+    color: #c7d5e0;
+    margin: 5px 0;
+  }
+  
+  .pricing {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-top: 10px;
+  }
+  
+  .discount {
+    background-color: #5c941f;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 3px;
+  }
+  
+  .old-price {
+    text-decoration: line-through;
+    color: #c7d5e0;
+  }
+  
+  .new-price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  

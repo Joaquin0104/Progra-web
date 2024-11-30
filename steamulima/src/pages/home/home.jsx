@@ -4,20 +4,22 @@ import Header from '../../layouts/header';
 import Navigationbar from '../../components/navigationbar';
 import SpecialOffers from '../../components/SpecialOffers';
 import Footer from '../../layouts/footer';
+import GameList from '../../components/GameList';
 
 const Home = () => {
   return (
     <>
       <Header />
       <main className="main-content">
-        <aside className="left-sidebar">13% - Left Sidebar</aside>
+        <aside className="left-sidebar"></aside>
         <section className="center-content">
           <Navigationbar/>
           <h1>Destacados y Recomendados</h1>
           <Carousel />
           <SpecialOffers/>
+          <GameList/>
         </section>
-        <aside className="right-sidebar">13% - Right Sidebar</aside>
+        <aside className="right-sidebar"></aside>
       </main>
       <Footer/>
       

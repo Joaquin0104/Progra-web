@@ -1,21 +1,21 @@
 import React, { useEffect, useState } from "react";
-import { getFeaturedGames, getSpecialOffers } from "../services/steamApi"; // Importa la función de tu API
+import { getSpecialOffers } from "../services/steamApi"; // Importa la función de tu API
 import "../styles/SpecialOffers.css";
 
 const SpecialOffers = () => {
   const [games, setGames] = useState([]);
-  getSpecialOffers();
+
   useEffect(() => {
     // Cargar juegos destacados al montar el componente
-    const offerGames = async () => {
+    const fetchOffers = async () => {
       try {
-        const featuredGames = await getSpecialOffers();
-        setGames(featuredGames);
+        const specialOffers = await getSpecialOffers();
+        setGames(specialOffers);
       } catch (error) {
-        console.error("Error fetching featured games:", error);
+        console.error("Error fetching special offers:", error);
       }
     };
-    offerGames();
+    fetchOffers();
   }, []);
 
   return (
@@ -26,7 +26,7 @@ const SpecialOffers = () => {
       </div>
       <div className="carousel">
         {games.map((game) => (
-          <div key={game.steam_appid} className="offer-card">
+          <div key={game.steam_appid} className="offer-card" data-badge={game.is_live ? "DIRECTO" : ""}>
             <img
               src={game.header_image} // La API proporciona `header_image`
               alt={game.name}
@@ -40,12 +40,23 @@ const SpecialOffers = () => {
                   : "Oferta por tiempo limitado"}
               </p>
               <div className="pricing">
-                <span className="discount">-{game.price_overview.discount_percent}%</span>
-                <span className="old-price">{game.price_overview.initial_formatted}</span>
-                <span className="new-price">{game.price_overview.final_formatted}</span>
+                <span className="discount">
+                  -{game.price_overview.discount_percent}%
+                </span>
+                <span className="old-price">
+                  {game.price_overview.initial_formatted}
+                </span>
+                <span className="new-price">
+                  {game.price_overview.final_formatted}
+                </span>
               </div>
             </div>
           </div>
+        ))}
+      </div>
+      <div className="carousel-indicators">
+        {games.map((_, index) => (
+          <div key={index} className={index === 0 ? "active" : ""}></div>
         ))}
       </div>
     </div>

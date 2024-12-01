@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getAppDetails } from "../../services/steamApi";
+import Header from "../../layouts/header";
+import Footer from "../../layouts/footer";
+import Navigationbar from "../../components/navigationbar";
+import GameDetails from "../../components/GameDetails";
 
 const Product = () => {
   const { appId } = useParams(); // Obtiene el ID del juego desde la URL
@@ -21,27 +25,21 @@ const Product = () => {
   if (!game) return <div>Cargando detalles...</div>;
 
   return (
-    <div className="product-page">
-      <h1>{game.name}</h1>
-      <img src={game.header_image} alt={game.name} />
-      <p>{game.short_description}</p>
-      <div className="game-tags">
-        {game.genres?.map((genre, index) => (
-          <span key={index} className="tag">
-            {genre.description}
-          </span>
-        ))}
-      </div>
-      <div className="game-screenshots">
-        {game.screenshots?.map((screenshot, index) => (
-          <img
-            key={index}
-            src={screenshot.path_thumbnail}
-            alt={`Screenshot ${index + 1}`}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+        
+        <Header />
+      <main className="main-content">
+        <aside className="left-sidebar"></aside>
+        <section className="center-content">
+            <Navigationbar/>
+            <div className="product-page">
+                {game ? <GameDetails game={game} /> : <p>Cargando detalles del juego...</p>}
+            </div>
+        </section>
+        <aside className="right-sidebar"></aside>
+      </main>
+      <Footer/>
+    </>
   );
 };
 

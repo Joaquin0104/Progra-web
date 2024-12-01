@@ -10,40 +10,53 @@ body {
 .carousel {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   width: 90%;
-  max-width: 1200px; /* Ancho máximo del carrusel */
-  margin: auto; /* Centra horizontalmente */
-  overflow: hidden; /* Ocultar el desbordamiento */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Sombra */
-  background-color: #1b2838; /* Fondo similar al de Steam */
+  max-width: 1200px;
+  margin: auto;
+  overflow: hidden;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #1b2838;
+  position: relative;
 }
 
 .carousel-content {
-  transition: transform 0.5s ease; /* Transición suave */
-  display:ruby;
+  display: flex;
+  width: 100%;
+  align-items: stretch;
+}
+
+.carousel-image {
+  flex: 7;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #1b2838;
 }
 
 .carousel-image img {
-  flex:80;
-  height: 100%; /* Imagen responsiva */
-  border-radius: 8px 8px 0 0; /* Bordes redondeados en la parte superior */
-  padding: 20px;  
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px 0 0 8px;
 }
 
 .carousel-details {
-  flex:20;
+  flex: 3;
   padding: 20px;
-  border-radius: 0 0 8px 8px; /* Bordes redondeados en la parte inferior */
-  color: #ffffff; /* Color del texto */
+  border-radius: 0 8px 8px 0;
+  color: #ffffff;
   box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 h3 {
-  margin: 0 0 10px; /* Margen para el título */
-  font-size: 1.5em; /* Tamaño de fuente para el título */
-  color: #ffffff; /* Color del título */
+  margin: 0 0 10px;
+  font-size: 1.5em;
+  color: #ffffff;
 }
 
 .screenshots-gallery {

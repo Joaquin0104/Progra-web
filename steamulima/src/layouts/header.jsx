@@ -1,12 +1,18 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/globals.css'; 
-
+import { useNavigate } from "react-router-dom";
 
 const Header = () => {
+
+  const navigate = useNavigate();
+
+  const handleClick  = () => {
+    navigate(`/`);
+  };
     return (
         <header class="steam-header">
         <div class="logo">
-          <img src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt="" />
+          <img src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016" alt=""  onClick={handleClick}/>
         </div>
         <nav class="nav-links">
           <a href="#" class="active">TIENDA</a>

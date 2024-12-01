@@ -1,0 +1,85 @@
+.game-details-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: #1b2838;
+    color: #fff;
+    border-radius: 8px;
+    width:100%;
+    margin: auto;
+  }
+  
+  .game-header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #fff;
+  }
+  
+  .game-header .game-release-date {
+    color: #c5c5c5;
+  }
+  
+  .game-media {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  
+  .game-video {
+    max-width: 100%;
+    border-radius: 8px;
+  }
+  
+  .game-screenshots {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .game-screenshot {
+    width: 100px;
+    height: auto;
+    border-radius: 4px;
+  }
+  
+  .game-description {
+    margin-top: 16px;
+    font-size: 14px;
+  }
+  
+  .game-details-info {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+  
+  .game-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  
+  .game-tag {
+    background-color: #2a475e;
+    padding: 4px 8px;
+    border-radius: 4px;
+    color: #c5c5c5;
+    font-size: 12px;
+  }
+  
+  .game-pricing {
+    margin-top: 16px;
+  }
+  
+  .game-price {
+    font-size: 16px;
+    color: #fff;
+  }
+  
+  .game-discount {
+    color: #d63c2c;
+    font-weight: bold;
+    margin-right: 8px;
+  }
+  

@@ -2,6 +2,9 @@ import React, { useEffect, useState } from 'react';
 import '../styles/globals.css'; 
 import { useNavigate } from "react-router-dom";
 
+
+
+
 const Header = () => {
 
   const navigate = useNavigate();
@@ -9,6 +12,7 @@ const Header = () => {
   const handleClick  = () => {
     navigate(`/`);
   };
+
     return (
         <header class="steam-header">
         <div class="logo">

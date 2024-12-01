@@ -1,18 +1,36 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useContext, useState } from "react";
 
+// Crear el contexto
 const AuthContext = createContext();
 
-export const useAuth = () => useContext(AuthContext);
+// Hook personalizado para usar el contexto
+export const useAuth = () => {
+  const context = useContext(AuthContext);
+  if (!context) {
+    throw new Error("useAuth debe usarse dentro de un AuthProvider");
+  }
+  return context;
+};
 
+// Proveedor del contexto
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState(null); // Estado para el usuario logueado
 
-  const login = (username) => setUser({ username });
-  const logout = () => setUser(null);
+  // Función para iniciar sesión
+  const login = (username) => {
+    setUser({ username }); // Guarda el usuario en el estado
+    console.log(`Usuario logueado: ${username}`);
+  };
+
+  // Función para cerrar sesión
+  const logout = () => {
+    setUser(null); // Limpia el estado del usuario
+    console.log("Sesión cerrada");
+  };
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      {children}
+      {children} {/* Renderiza los hijos del contexto */}
     </AuthContext.Provider>
   );
 };

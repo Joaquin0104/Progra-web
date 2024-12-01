@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { getGameList } from "../services/steamApi"; // Importa la nueva función
+import { useGameNavigation } from "../utlis/navigateClick";
 import "../styles/GameList.css";
+
 
 const GameList = () => {
   const [games, setGames] = useState([]); // Lista de juegos
   const [selectedGame, setSelectedGame] = useState(null); // Juego seleccionado
+  const handleGameClick = useGameNavigation();
 
   // Fetch de la lista de juegos
   useEffect(() => {
@@ -20,9 +23,11 @@ const GameList = () => {
   }, []);
 
   // Función para manejar la selección de un juego
-  const handleGameClick = (game) => {
+  const handleGameClickOn = (game) => {
     setSelectedGame(game); // Actualiza el estado con el juego seleccionado
   };
+  
+
 
   return (
     <div className="game-list-container">
@@ -35,7 +40,8 @@ const GameList = () => {
             className={`game-item ${
               selectedGame && selectedGame.id === game.id ? "selected" : ""
             }`}
-            onMouseEnter={() => handleGameClick(game)} // Selección del juego
+            onMouseEnter={() => handleGameClickOn(game)} // Selección del juego
+            onClick={() => handleGameClick(game)}
           >
             <img src={game.header_image} alt={game.name} className="game-thumbnail" />
             <div className="game-info">

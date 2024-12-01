@@ -15,8 +15,8 @@ const Header = () => {
           <a href="#">SOPORTE</a>
         </nav>
         <div class="user-actions">
-          <button class="install-btn">Instalar Steam</button>
-          <span>iniciar sesión</span>
+          <button class="install-btn">Iniciar Sesión</button>
+          <span>Registrarse</span>
           <span>|</span>
           <span>idioma <i class="arrow-down"></i></span>
         </div>

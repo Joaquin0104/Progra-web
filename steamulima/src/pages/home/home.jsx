@@ -5,13 +5,16 @@ import Navigationbar from '../../components/navigationbar';
 import SpecialOffers from '../../components/SpecialOffers';
 import Footer from '../../layouts/footer';
 import GameList from '../../components/GameList';
+import Sidebar from '../../components/Sidebar';
 
 const Home = () => {
   return (
     <>
       <Header />
       <main className="main-content">
-        <aside className="left-sidebar"></aside>
+        <aside className="left-sidebar">
+          <Sidebar/>
+        </aside>
         <section className="center-content">
           <Navigationbar/>
           <h1>Destacados y Recomendados</h1>

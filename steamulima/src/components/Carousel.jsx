@@ -60,7 +60,7 @@ const Carousel = () => {
             <p>Ya disponible</p>
             <span className="tag">Lo más vendido</span>
             <div className="game-price">
-              <span>S/. {currentGame.price || 'Gratis'}</span>
+              <span> {currentGame.price_overview?.final_formatted}</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,64 @@
+.sidebar {
+    background-color: #1b2838;
+    color: #c7d5e0;
+    width: 100%;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .gift-cards {
+    margin-bottom: 20px;
+    
+  }
+  
+  .gift-cards .gift-image {
+    width: 100%;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 170px;
+    height: auto;
+  }
+  
+  .gift-cards h3 {
+    font-size: 1.1em;
+    color: #ffffff;
+    margin-top: 10px;
+  }
+  
+  .gift-cards p {
+    font-size: 0.9em;
+    color: #c7d5e0;
+  }
+  
+  .categories {
+    margin-top: 10px;
+  }
+  
+  .category {
+    margin-bottom: 20px;
+  }
+  
+  .category h4 {
+    font-size: 0.9em;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .category ul li {
+    font-size: 0.85em;
+    color: #c7d5e0;
+    margin-bottom: 8px;
+    cursor: pointer;
+    transition: color 0.2s;
+  }
+  
+  .category ul li:hover {
+    color: #ffffff;
+  }
+  

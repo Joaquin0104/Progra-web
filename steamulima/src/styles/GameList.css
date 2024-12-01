@@ -1,112 +1,142 @@
 /* Contenedor principal */
 .game-list-container {
-    display: flex;
-    gap: 20px;
-    background-color: #1b2838;
-    color: white;
-    padding: 20px;
-  }
-  
-  /* Lista de juegos */
-  .game-list {
-    flex: 2;
-    background-color: #2a475e;
-    border-radius: 8px;
-    overflow: hidden;
-  }
-  
-  .game-list h2 {
-    margin: 0;
-    padding: 10px 15px;
-    background-color: #1b2838;
-    color: #ffffff;
-    border-bottom: 1px solid #394854;
-  }
-  
-  .game-item {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-  }
-  
-  .game-item:hover,
-  .game-item.selected {
-    background-color: #3b4f65;
-  }
-  
-  .game-thumbnail {
-    width: 50px;
-    height: 50px;
-    border-radius: 4px;
-    margin-right: 10px;
-  }
-  
-  .game-info h3 {
-    margin: 0;
-    font-size: 1em;
-    color: white;
-  }
-  
-  .game-info .game-genres {
-    font-size: 0.85em;
-    color: #c7d5e0;
-  }
-  
-  .game-info .game-price {
-    font-size: 0.9em;
-    color: white;
-    display: flex;
-    gap: 10px;
-  }
-  
-  .discount {
-    background-color: #5c941f;
-    color: #ffffff;
-    padding: 2px 5px;
-    border-radius: 3px;
-    font-size: 0.85em;
-  }
-  
-  /* Detalles del juego */
-  .game-details {
-    flex: 3;
-    background-color: #2a475e;
-    border-radius: 8px;
-    padding: 15px;
-  }
-  
-  .game-details h2 {
-    margin: 0;
-    font-size: 1.5em;
-  }
-  
-  .game-tags {
-    margin: 10px 0;
-  }
-  
-  .game-tags .tag {
-    display: inline-block;
-    background-color: #394854;
-    color: #ffffff;
-    padding: 5px 10px;
-    margin-right: 5px;
-    border-radius: 3px;
-    font-size: 0.85em;
-  }
-  
-  .game-screenshots {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  .screenshot {
-    width: 100px;
-    height: 100px;
-    object-fit: cover;
-    border-radius: 4px;
-  }
-  
+  display: flex;
+  gap: 20px;
+  background-color: #1b2838;
+  color: white;
+  padding: 20px;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Lista de juegos */
+.game-list {
+  flex: 0 0 60%; /* Ajustado para que ocupe el 70% del ancho */
+  background-color: #2a475e;
+  border-radius: 8px;
+  padding: 10px;
+  overflow: hidden; /* Elimina el scrollbar de este contenedor */
+}
+
+.game-list h2 {
+  margin: 0;
+  padding: 15px;
+  font-size: 1.2em;
+  background-color: #1b2838;
+  color: #ffffff;
+  border-bottom: 2px solid #394854;
+}
+
+.game-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #394854;
+  transition: background-color 0.3s;
+}
+
+.game-item:hover,
+.game-item.selected {
+  background-color: #3b4f65;
+}
+
+.game-thumbnail {
+  width: 30%;
+  border-radius: 4px;
+  margin-right: 15px;
+  object-fit: cover;
+}
+
+.game-info h3 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: bold;
+  color: white;
+}
+
+.game-info .game-genres {
+  font-size: 0.85em;
+  color: #c7d5e0;
+}
+
+.game-info .game-price {
+  font-size: 0.9em;
+  color: white;
+  display: flex;
+  gap: 5px;
+  margin-top: 5px;
+}
+
+.discount {
+  background-color: #5c941f;
+  color: #ffffff;
+  padding: 2px 5px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+/* Detalles del juego */
+.game-details {
+  flex: 1;
+  background-color: #2a475e;
+  border-radius: 8px;
+  padding: 20px;
+  overflow-y: auto; /* Habilita el scrollbar aquí */
+  max-height: 100%;
+}
+
+.game-details h2 {
+  margin: 0;
+  font-size: 1.5em;
+  color: white;
+}
+
+.game-tags {
+  margin: 15px 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-tags .tag {
+  display: inline-block;
+  background-color: #394854;
+  color: #ffffff;
+  padding: 5px 10px;
+  border-radius: 3px;
+  font-size: 0.85em;
+}
+
+.game-screenshots {
+  display: flex;
+  flex-direction: column; /* Alinea las imágenes verticalmente */
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.screenshot {
+  width: 100%; /* Cada imagen ocupa todo el ancho disponible */
+  height: auto; /* Mantiene las proporciones de la imagen */
+  border-radius: 4px;
+  object-fit: cover;
+  transition: transform 0.2s;
+}
+
+.screenshot:hover {
+  transform: scale(1.05);
+}
+
+/* Scrollbar personalizado */
+.game-details::-webkit-scrollbar {
+  width: 8px;
+}
+
+.game-details::-webkit-scrollbar-thumb {
+  background-color: #394854;
+  border-radius: 4px;
+}
+
+.game-details::-webkit-scrollbar-track {
+  background-color: #1b2838;
+}

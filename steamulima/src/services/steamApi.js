@@ -40,7 +40,7 @@ export const getSpecialOffers = async () => {
 export const getGameList = async () => {
   try {
     // Puedes usar un conjunto de IDs representativos para simular los juegos de la lista
-    const gameListIds = [12210, 548430, 271590, 570, 730]; // IDs de ejemplo para GameList
+    const gameListIds = [12210, 548430,1145350,2050650,1790600,1248130,2369390,1172620,2878980,3035570,255710]; // IDs de ejemplo para GameList
     const promises = gameListIds.map((id) => getAppDetails(id));
     return Promise.all(promises);
   } catch (error) {

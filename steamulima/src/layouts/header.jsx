@@ -2,7 +2,11 @@ import React, { useEffect, useState } from 'react';
 import '../styles/globals.css'; 
 
 
+
+
+
 const Header = () => {
+
     return (
         <header class="steam-header">
         <div class="logo">

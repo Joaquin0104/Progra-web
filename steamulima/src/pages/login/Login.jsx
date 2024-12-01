@@ -1,46 +1,62 @@
-import React , {useState} from "react";
-import { useAuth } from "../../assets/contexts/loginContext";
-import Header from '../../layouts/header';
+import React, { useState } from "react";
+import { useAuth } from "../../assets/contexts/loginContext"
+import "../../styles/login.css"; // Asegúrate de que este archivo exista
+import Header from "../../layouts/header";
+const Login = () => {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
 
+  const { login } = useAuth();
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-const Login = ({switchToregiter}) => {
-    const [username, setusername] = useState("");
-    const [password, setPassword] = useState("");
-    const [error, setError] = useState("");
+    if (username.trim() === "") {
+      setError("Por favor, ingresa un nombre de usuario.");
+      return;
+    }
 
-    const handleInput = (e) => {
-        e.preventDefault();
-        if(username.trim()===''){
-            setError('Porfavor , ingresa un nombre de usuario')
-            return ;
-        }
-        Login(setusername);
-    };
+    if (password.trim() === "") {
+      setError("Por favor, ingresa tu contraseña.");
+      return;
+    }
 
-    return (
-        <>
-            <Header></Header>
-            <div className="login-container">
-                <h2>Inicio de Sesion </h2>
-                <form  className="login-form">
-                    <input
-                        type="text"
-                        placeholder="Usuario"
-                        value={(username)}
-                        onChange={(e)=>setusername(e.target.value)}
-                    />
-                    <input 
-                        type ="password"
-                        placeholder="Contraseña"
-                        value={(password)}
-                        onChange={(e)=>setPassword(e.target.value)}
+    login(username); 
+    setError("");
+    alert(`¡Bienvenido, ${username}!`);
+  };
 
-                    />
-                </form>
-            </div>
-        </>
-    )
+  return (
+    <div>
+    <Header/>
+    <div className="login-page">
+      <div className="login-container">
+        <h2>Inicio de Sesión</h2>
+        <form onSubmit={handleSubmit} className="login-form">
+          <label htmlFor="username">Usuario</label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Ingresa tu nombre de usuario"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+          <label htmlFor="password">Contraseña</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Ingresa tu contraseña"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+          {error && <p style={{ color: "red" }}>{error}</p>}
+          <button type="submit">Iniciar Sesión</button>
+        </form>
+      </div>
+    </div>
+    </div>
+  );
+};
 
-}
 export default Login;

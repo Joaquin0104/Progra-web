@@ -5,6 +5,7 @@ import Product from './pages/product/product';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './assets/contexts/loginContext';
 
+
 const App = () => {
   return (
     <AuthProvider>

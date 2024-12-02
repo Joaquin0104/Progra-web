@@ -5,12 +5,13 @@ import { useAuth } from '../assets/contexts/loginContext';
 
 const Header = () => {
 
+
   const navigate = useNavigate();
   const {user,logout} = useAuth();
 
   const handleClick  = () => {
     navigate(`/`);
-  };
+  }
 
   const handleLogout = () => {
     logout();

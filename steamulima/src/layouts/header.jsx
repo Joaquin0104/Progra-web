@@ -7,11 +7,12 @@ import { useNavigate } from "react-router-dom";
 
 const Header = () => {
 
+
   const navigate = useNavigate();
 
   const handleClick  = () => {
     navigate(`/`);
-  };
+  }
 
     return (
         <header class="steam-header">

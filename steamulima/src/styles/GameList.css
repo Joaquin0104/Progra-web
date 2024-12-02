@@ -13,7 +13,9 @@
   background-color: #2a475e;
   border-radius: 8px;
   padding: 10px;
-  overflow: hidden; 
+  overflow-y: auto; 
+  max-height: 100%; 
+  box-sizing: border-box;
 }
 
 .game-list h2 {
@@ -135,4 +137,17 @@
 
 .game-details::-webkit-scrollbar-track {
   background-color: #1b2838;
+}
+
+.game-list::-webkit-scrollbar {
+  width: 8px; /* Ancho del scrollbar */
+}
+
+.game-list::-webkit-scrollbar-thumb {
+  background-color: #394854; 
+  border-radius: 4px; 
+}
+
+.game-list::-webkit-scrollbar-track {
+  background-color: #1b2838; 
 }

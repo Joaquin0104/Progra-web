@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import '../styles/navigationbar.css'; 
 import { useNavigate } from 'react-router-dom';
 import { getAppList, getAppDetails } from "../services/steamApi";
+import UserBag from './UserBag';
 
 const Navigationbar = () => {
     const [searchQuery, setSearchQuery] = useState(""); // Texto de búsqueda
@@ -49,7 +50,7 @@ const Navigationbar = () => {
     return (
 
       <>
-        
+        <UserBag/>
         <nav className="navigation-bar">
         <ul className="nav-links">
           <li className="dropdown">

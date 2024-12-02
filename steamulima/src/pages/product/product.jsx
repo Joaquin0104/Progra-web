@@ -5,12 +5,14 @@ import Header from "../../layouts/header";
 import Footer from "../../layouts/footer";
 import Navigationbar from "../../components/navigationbar";
 import GameDetails from "../../components/GameDetails";
-import { useNavigate } from "react-router-dom";
+import BuyBox from "../../components/BuyBox";
+import '../../styles/Product.css';
+import SystemRequirements from "../../components/SysteRequirements";
+
 const Product = () => {
   const { appId } = useParams(); // Obtiene el ID del juego desde la URL
   const [game, setGame] = useState(null);
 
-  const navigate = useNavigate();
   useEffect(() => {
     const fetchGameDetails = async () => {
       try {
@@ -25,44 +27,25 @@ const Product = () => {
 
   if (!game) return <div>Cargando detalles...</div>;
 
-  const handleCarrito = () =>{
-    navigate("/carrito")
-  }
-
-
   return (
     <>
-        <div className="conatiner-botones" style={{display: "flex", justifyContent: "flex-end", marginTop: "60px", padding: "0 20px"}}> 
-          <button className="boton1" style={{
-            backgroundColor: "#007bff",
-            color: "white",
-            border: "none",
-            padding: "10px 20px",
-            marginLeft: "10px",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-            transition: "background-color 0.3s ease"}}>Lista de Desedos</button>
-          <button className="boton2"  onClick={handleCarrito}style={{
-            backgroundColor: "green",
-            color: "white ",
-            border: "2px solid green",
-            padding: "10px 20px",
-            marginLeft: "10px",
-            borderRadius: "5px",
-            cursor: "pointer",
-            fontSize: "16px",
-            transition: "background-color 0.3s ease"
-          }}>Carrito</button>
-        </div>
         <Header />
       <main className="main-content">
         <aside className="left-sidebar"></aside>
         <section className="center-content">
             <Navigationbar/>
             <div className="product-page">
-                {game ? <GameDetails game={game} /> : <p>Cargando detalles del juego...</p>}
+                {game ? <GameDetails game={game} />: <p>Cargando detalles del juego...</p>}
+                <BuyBox game={game}/>
+                <div className="game-about">
+                  <h2>Acerca del juego</h2>
+                  <div
+                    className="about-the-game-content"
+                    dangerouslySetInnerHTML={{ __html: game.about_the_game || "Información no disponible" }}
+                  />
+                </div>
             </div>
+            <SystemRequirements requirements={game.pc_requirements}/>
         </section>
         <aside className="right-sidebar"></aside>
       </main>

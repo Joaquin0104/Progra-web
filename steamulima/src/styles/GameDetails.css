@@ -1,85 +1,146 @@
 .game-details-container {
-    display: flex;
-    flex-direction: column;
-    padding: 20px;
-    background-color: #1b2838;
-    color: #fff;
-    border-radius: 8px;
-    width:100%;
-    margin: auto;
-  }
-  
-  .game-header h1 {
-    margin: 0;
-    font-size: 24px;
-    color: #fff;
-  }
-  
-  .game-header .game-release-date {
-    color: #c5c5c5;
-  }
-  
-  .game-media {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-  }
-  
-  .game-video {
-    max-width: 100%;
-    border-radius: 8px;
-  }
-  
-  .game-screenshots {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .game-screenshot {
-    width: 100px;
-    height: auto;
-    border-radius: 4px;
-  }
-  
-  .game-description {
-    margin-top: 16px;
-    font-size: 14px;
-  }
-  
-  .game-details-info {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 16px;
-    flex-wrap: wrap;
-  }
-  
-  .game-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-  }
-  
-  .game-tag {
-    background-color: #2a475e;
-    padding: 4px 8px;
-    border-radius: 4px;
-    color: #c5c5c5;
-    font-size: 12px;
-  }
-  
-  .game-pricing {
-    margin-top: 16px;
-  }
-  
-  .game-price {
-    font-size: 16px;
-    color: #fff;
-  }
-  
-  .game-discount {
-    color: #d63c2c;
-    font-weight: bold;
-    margin-right: 8px;
-  }
-  
+  display: flex;
+  flex-direction: column;
+  background-color: #1b2838;
+  color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 1200px; /* Aumentamos el tamaño máximo */
+  margin: auto;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.4);
+}
+
+.media-selector-container {
+  display: flex; /* Flex para alinear elementos horizontalmente */
+  flex: 2; /* Aumentamos su peso */
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+  width: 60%;
+}
+
+.DescriptionContainer {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* El contenedor ocupará menos espacio que el selector multimedia */
+  margin-left: 20px; /* Añadimos un margen para separar los elementos */
+  padding: 10px;
+  background-color: #16202d;
+  border-radius: 8px;
+  max-width: 30%;
+}
+
+.game-details-container {
+  display: flex; /* Flex para dividir las columnas */
+  flex-direction: row; /* Elementos en fila */
+  gap: 20px; /* Espaciado entre columnas */
+}
+
+.media-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #2a475e;
+  border-radius: 8px;
+  padding: 10px;
+  position: relative;
+  max-width: auto;
+}
+
+.media-video,
+.media-image {
+  max-width: 100%;
+  max-height: 100%;
+  border-radius: 8px;
+}
+
+.media-thumbnails {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px;
+  background-color: #16202d;
+  border-radius: 8px;
+  max-width: auto;
+}
+
+.thumbnail {
+  cursor: pointer;
+  flex-shrink: 0;
+  width: 120px;
+  height: 80px;
+  border: 2px solid transparent;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.thumbnail.active {
+  border-color: #66c0f4;
+}
+
+.thumbnail-video {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+}
+
+.thumbnail-video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.thumbnail-video .play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #ffffff;
+  font-size: 18px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  padding: 4px;
+}
+
+.thumbnail-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.game-description {
+  font-size: 16px;
+  color: #c5c5c5;
+  margin-top: 20px;
+}
+
+.game-details-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.game-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.game-tag {
+  background-color: #2a475e;
+  color: #c5c5c5;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 4px;
+}
+
+.game-ratings p {
+  margin: 0;
+  color: #c5c5c5;
+  font-size: 14px;
+}

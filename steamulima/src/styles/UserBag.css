@@ -1,0 +1,27 @@
+.conatiner-botones{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 60px;
+    padding: 0 20px;
+}
+.boton1{
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin-Left: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: #007bff 0.3s ease;
+}
+
+.boton2{
+    background-color: green;
+    color: white ;
+    border: 2px solid green;
+    padding: 10px 20px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    transition: green 0.3s ease;
+}

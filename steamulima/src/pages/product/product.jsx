@@ -5,11 +5,12 @@ import Header from "../../layouts/header";
 import Footer from "../../layouts/footer";
 import Navigationbar from "../../components/navigationbar";
 import GameDetails from "../../components/GameDetails";
-
+import { useNavigate } from "react-router-dom";
 const Product = () => {
   const { appId } = useParams(); // Obtiene el ID del juego desde la URL
   const [game, setGame] = useState(null);
 
+  const navigate = useNavigate();
   useEffect(() => {
     const fetchGameDetails = async () => {
       try {
@@ -24,9 +25,14 @@ const Product = () => {
 
   if (!game) return <div>Cargando detalles...</div>;
 
+  const handleCarrito = () =>{
+    navigate("/carrito")
+  }
+
+
   return (
     <>
-        <div className="conatiner-botones" style={{display: "flex", justifyContent: "flex-end", marginTop: "20px", padding: "0 20px"}}> 
+        <div className="conatiner-botones" style={{display: "flex", justifyContent: "flex-end", marginTop: "60px", padding: "0 20px"}}> 
           <button className="boton1" style={{
             backgroundColor: "#007bff",
             color: "white",
@@ -37,7 +43,7 @@ const Product = () => {
             cursor: "pointer",
             fontSize: "16px",
             transition: "background-color 0.3s ease"}}>Lista de Desedos</button>
-          <button className="boton2" style={{
+          <button className="boton2"  onClick={handleCarrito}style={{
             backgroundColor: "green",
             color: "white ",
             border: "2px solid green",

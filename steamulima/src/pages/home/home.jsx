@@ -6,6 +6,9 @@ import SpecialOffers from '../../components/SpecialOffers';
 import Footer from '../../layouts/footer';
 import GameList from '../../components/GameList';
 import Sidebar from '../../components/Sidebar';
+import { useNavigate } from 'react-router-dom';
+
+
 
 const Home = () => {
   return (

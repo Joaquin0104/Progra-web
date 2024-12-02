@@ -7,8 +7,7 @@ const Sidebar = () => {
       {/* Sección de tarjetas regalo */}
       <div className="gift-cards">
         <img
-          src="https://tiendasarcadia.com/wp-content/uploads/2023/03/tarjetas-Steam.png" // Coloca aquí el enlace real a las imágenes de las tarjetas.
-          alt="Tarjetas de regalo"
+          src="https://tiendasarcadia.com/wp-content/uploads/2023/03/tarjetas-Steam.png" 
           className="gift-image"
         />
         <h3>Tarjetas Regalo de Steam</h3>

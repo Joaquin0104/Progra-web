@@ -1,6 +1,6 @@
 .login-page {
-  background: none;  /* Elimina el fondo de la página */
-  height: 100vh; /* Mantén el alto completo de la página */
+  background: none;  
+  height: 100vh; 
   display: flex;
   justify-content: center;
   align-items: center;

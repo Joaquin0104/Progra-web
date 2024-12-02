@@ -61,7 +61,7 @@ h3 {
 
 .screenshots-gallery {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2 columnas */
+  grid-template-columns: repeat(2, 1fr); 
   position: relative;
 }
 
@@ -74,47 +74,47 @@ h3 {
 }
 
 .screenshot-item img:hover {
-  transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Sombra para resaltar */
+  transform: scale(1.05); 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); 
 }
 
 .tag {
   display: inline-block;
-  background-color: #ffcc00; /* Color de fondo para la etiqueta */
+  background-color: #ffcc00; 
   padding: 5px 10px;
   border-radius: 5px;
   margin-top: 10px;
-  color: #333; /* Color del texto de la etiqueta */
+  color: #333; 
 }
 
 .game-price {
-  margin-top: 10px; /* Margen para el precio */
-  font-size: 1.2em; /* Tamaño de fuente para el precio */
-  color: #00b300; /* Color para el precio */
+  margin-top: 10px; 
+  font-size: 1.2em; 
+  color: #00b300; 
 }
 
 .carousel-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(255, 255, 255, 0.2); /* Fondo semi-transparente */
-  border: none; /* Sin borde */
-  padding: 10px; /* Relleno para los botones */
-  cursor: pointer; /* Cambiar cursor a puntero */
-  border-radius: 50%; /* Botones circulares */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); /* Sombra para los botones */
-  color: #ffffff; /* Color del icono */
-  transition: background-color 0.2s; /* Transición para el hover */
+  background-color: rgba(255, 255, 255, 0.2); 
+  border: none;
+  padding: 10px; 
+  cursor: pointer; 
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5); 
+  color: #ffffff; 
+  transition: background-color 0.2s; 
 }
 
 .carousel-btn.left {
-  left: 10px; /* Posición del botón izquierdo */
+  left: 10px; 
 }
 
 .carousel-btn.right {
-  right: 10px; /* Posición del botón derecho */
+  right: 10px;
 }
 
 .carousel-btn:hover {
-  background-color: rgba(255, 255, 255, 0.5); /* Cambiar fondo al pasar el mouse */
+  background-color: rgba(255, 255, 255, 0.5); 
 }

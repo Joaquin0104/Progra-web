@@ -6,10 +6,9 @@ import '../styles/Banner.css';
 const Banner = () => {
     return (
         <div className="app">
-      {/* Navigation Bar */}
+
       <Navigationbar className="content" />
       
-      {/* Video de fondo */}
         <div className="background-video-container">
             <video autoPlay loop muted playsInline className="background-video">
                 <source

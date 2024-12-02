@@ -4,8 +4,9 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1b4d80; /* Azul Steam */
+    background-color: #1b4d80; 
     padding: 10px 20px;
+    height:50px;
   }
   
   .nav-links {
@@ -49,7 +50,7 @@
   
   .dropdown-menu.wide {
     display: grid;
-    grid-template-columns: repeat(3, 1fr); /* Submenús en columnas */
+    grid-template-columns: repeat(3, 1fr); 
     gap: 10px;
   }
   

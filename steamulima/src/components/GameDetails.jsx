@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../styles/GameDetails.css"; // Estilo del componente
+import "../styles/GameDetails.css"; 
 
 const GameDetails = ({ game }) => {
   if (!game) {
@@ -8,7 +8,7 @@ const GameDetails = ({ game }) => {
 
   const [selectedIndex, setSelectedIndex] = useState(0);
 
-  // Combina películas y capturas de pantalla
+ 
   const mediaItems = [
     ...(game.movies?.map((movie) => ({ type: "movie", src: movie.mp4?.max })) || []),
     ...(game.screenshots?.map((screenshot) => ({ type: "screenshot", src: screenshot.path_thumbnail })) || []),

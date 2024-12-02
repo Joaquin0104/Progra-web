@@ -10,13 +10,13 @@ import '../../styles/Product.css';
 import SystemRequirements from "../../components/SysteRequirements";
 
 const Product = () => {
-  const { appId } = useParams(); // Obtiene el ID del juego desde la URL
+  const { appId } = useParams(); 
   const [game, setGame] = useState(null);
 
   useEffect(() => {
     const fetchGameDetails = async () => {
       try {
-        const gameDetails = await getAppDetails(appId); // Llama a la API para obtener detalles
+        const gameDetails = await getAppDetails(appId); 
         setGame(gameDetails);
       } catch (error) {
         console.error("Error fetching game details:", error);

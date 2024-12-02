@@ -5,16 +5,16 @@ import { getAppList, getAppDetails } from "../services/steamApi";
 import UserBag from './UserBag';
 
 const Navigationbar = () => {
-    const [searchQuery, setSearchQuery] = useState(""); // Texto de búsqueda
-    const [filteredGames, setFilteredGames] = useState([]); // Resultados de búsqueda
-    const [allGames, setAllGames] = useState([]); // Lista completa de juegos
+    const [searchQuery, setSearchQuery] = useState(""); 
+    const [filteredGames, setFilteredGames] = useState([]); 
+    const [allGames, setAllGames] = useState([]); 
     const navigate = useNavigate();
 
     useEffect(() => {
         const fetchGames = async () => {
           try {
             const appList = await getAppList();
-            setAllGames(appList); // Guarda la lista completa en el estado
+            setAllGames(appList); 
           } catch (error) {
             console.error("Error fetching game list:", error);
           }
@@ -23,7 +23,6 @@ const Navigationbar = () => {
         fetchGames();
       }, []);
     
-      // Actualiza los resultados de búsqueda cuando el texto cambia
       const handleSearch = (event) => {
         const query = event.target.value.toLowerCase();
         setSearchQuery(query);
@@ -38,10 +37,9 @@ const Navigationbar = () => {
         }
       };
     
-      // Navega a la página del producto al hacer clic en un juego
       const handleGameClick = async (game) => {
         try {
-          navigate(`/Product/${game.appid}`); // Redirige a la página del producto
+          navigate(`/Product/${game.appid}`); 
         } catch (error) {
           console.error("Error fetching game details:", error);
         }

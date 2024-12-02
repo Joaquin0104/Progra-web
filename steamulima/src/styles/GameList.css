@@ -1,4 +1,3 @@
-/* Contenedor principal */
 .game-list-container {
   display: flex;
   gap: 20px;
@@ -9,13 +8,12 @@
   overflow: hidden;
 }
 
-/* Lista de juegos */
 .game-list {
-  flex: 0 0 60%; /* Ajustado para que ocupe el 70% del ancho */
+  flex: 0 0 60%; 
   background-color: #2a475e;
   border-radius: 8px;
   padding: 10px;
-  overflow: hidden; /* Elimina el scrollbar de este contenedor */
+  overflow: hidden; 
 }
 
 .game-list h2 {
@@ -76,13 +74,12 @@
   font-size: 0.85em;
 }
 
-/* Detalles del juego */
 .game-details {
   flex: 1;
   background-color: #2a475e;
   border-radius: 8px;
   padding: 20px;
-  overflow-y: auto; /* Habilita el scrollbar aquí */
+  overflow-y: auto; 
   max-height: 100%;
 }
 
@@ -110,14 +107,14 @@
 
 .game-screenshots {
   display: flex;
-  flex-direction: column; /* Alinea las imágenes verticalmente */
+  flex-direction: column; 
   gap: 10px;
   margin-top: 15px;
 }
 
 .screenshot {
-  width: 100%; /* Cada imagen ocupa todo el ancho disponible */
-  height: auto; /* Mantiene las proporciones de la imagen */
+  width: 100%; 
+  height: auto; 
   border-radius: 4px;
   object-fit: cover;
   transition: transform 0.2s;
@@ -127,7 +124,6 @@
   transform: scale(1.05);
 }
 
-/* Scrollbar personalizado */
 .game-details::-webkit-scrollbar {
   width: 8px;
 }

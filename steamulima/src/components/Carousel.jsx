@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { getFeaturedGames } from '../services/steamApi';
+import { useGameNavigation } from "../utlis/navigateClick";
 import '../styles/Carousel.css'; 
 
 const Carousel = () => {
     const [featuredGames, setFeaturedGames] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [screenshots, setScreenshots] = useState([]);
+    const handleGameClick = useGameNavigation();
   
     useEffect(() => {
       const fetchFeaturedGames = async () => {
@@ -39,10 +41,10 @@ const Carousel = () => {
       <div className="carousel">
         <div className="carousel-content">
           <div className="carousel-image">
-            <img src={currentGame.header_image} alt={currentGame.name} />
+            <img src={currentGame.header_image} alt={currentGame.name} onClick={() => handleGameClick(currentGame)} />
           </div>
           <div className="carousel-details">
-            <h3>{currentGame.name}</h3>
+            <h3 onClick={() => handleGameClick(currentGame)}>{currentGame.name}</h3>
             <div className="screenshots-gallery">
                 {currentGame.screenshots && currentGame.screenshots.length > 0 ? (
                 currentGame.screenshots.slice(0, 4).map((screenshot) => (

@@ -1,5 +1,5 @@
 import React from "react";
-import "../styles/BuyBox.css"; // Archivo CSS para estilos
+import "../styles/BuyBox.css"; 
 
 const BuyBox = ({ game }) => {
   if (!game || !game.price_overview) {

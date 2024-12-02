@@ -23,15 +23,12 @@ export const getAppList = async () => {
   }
 };
 
-
-// Lista simulada de juegos destacados
 export const getFeaturedGames = async () => {
-  const featuredGameIds = [1091500, 2124490, 2933620, 990080, 2183900]; // IDs de juegos populares
+  const featuredGameIds = [1091500, 2124490, 2933620, 990080, 2183900]; 
   const promises = featuredGameIds.map((id) => getAppDetails(id));
   return Promise.all(promises);
 };
 
-// Lista simulada de ofertas especiales
 export const getSpecialOffers = async () => {
   const offersGameIds = [1659420,2669320, 2488620, 1040200]; 
   const promises = offersGameIds.map((id) => getAppDetails(id));

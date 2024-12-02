@@ -16,7 +16,7 @@ const App = () => {
         <Route path="/" element={<Home />} />
 
         {/* Ruta dinámica para los detalles del juego */}
-        <Route path="/Product/:appId" element={<Product />} /> {/* Ruta para detalles */}
+        <Route path="/Product/:appId" element={<Product />} /> 
         <Route path='/login' element={<Login></Login>}></Route>
         <Route path='/Cart' element={<Cart></Cart>}></Route>
       </Routes>

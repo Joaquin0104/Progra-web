@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { getGameList } from "../services/steamApi"; // Importa la nueva función
+import { getGameList } from "../services/steamApi"; 
 import { useGameNavigation } from "../utlis/navigateClick";
 import "../styles/GameList.css";
 
 
 const GameList = () => {
-  const [games, setGames] = useState([]); // Lista de juegos
-  const [selectedGame, setSelectedGame] = useState(null); // Juego seleccionado
+  const [games, setGames] = useState([]); 
+  const [selectedGame, setSelectedGame] = useState(null); 
   const handleGameClick = useGameNavigation();
 
   // Fetch de la lista de juegos
   useEffect(() => {
     const fetchGames = async () => {
       try {
-        const gameList = await getGameList(); // Llama a la API para obtener los juegos
-        setGames(gameList); // Actualiza el estado con la lista de juegos
+        const gameList = await getGameList(); 
+        setGames(gameList); 
       } catch (error) {
         console.error("Error fetching game list:", error);
       }
@@ -22,9 +22,9 @@ const GameList = () => {
     fetchGames();
   }, []);
 
-  // Función para manejar la selección de un juego
+
   const handleGameClickOn = (game) => {
-    setSelectedGame(game); // Actualiza el estado con el juego seleccionado
+    setSelectedGame(game); 
   };
   
 
@@ -40,7 +40,7 @@ const GameList = () => {
             className={`game-item ${
               selectedGame && selectedGame.id === game.id ? "selected" : ""
             }`}
-            onMouseEnter={() => handleGameClickOn(game)} // Selección del juego
+            onMouseEnter={() => handleGameClickOn(game)} 
             onClick={() => handleGameClick(game)}
           >
             <img src={game.header_image} alt={game.name} className="game-thumbnail" />
@@ -73,7 +73,7 @@ const GameList = () => {
           {/* Nombre del juego */}
           <h2>{selectedGame.name}</h2>
 
-          {/* Reseñas (puedes personalizar esto si obtienes datos específicos de las reseñas) */}
+          {/* Reseñas */}
           <p>Reseñas de los usuarios en conjunto: Muy positivas</p>
 
           {/* Tags del juego */}

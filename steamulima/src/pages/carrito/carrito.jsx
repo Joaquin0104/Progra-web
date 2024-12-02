@@ -1,10 +1,14 @@
+import Header from '../../layouts/header';
+import Footer from '../../layouts/footer';
 
-
-
-
-const carrito = () =>{
-
-
+const Cart = () =>{
+    return(
+        <>
+            <Header/>
+            <Footer/>
+        </>
+    )
+    
 }
 
-export default carrito;
+export default Cart;

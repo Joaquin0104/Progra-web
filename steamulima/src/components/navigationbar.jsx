@@ -46,6 +46,11 @@ const Navigationbar = () => {
           console.error("Error fetching game details:", error);
         }
       };
+
+      const handleClickHome  = () => {
+        navigate(`/`);
+      }
+
       
     return (
 
@@ -56,7 +61,7 @@ const Navigationbar = () => {
           <li className="dropdown">
             <a href="#">Tu tienda</a>
             <ul className="dropdown-menu">
-              <li><a href="#">Inicio</a></li>
+              <li><a href="#" onClick={handleClickHome}>Inicio</a></li>
               <li><a href="#">Recomendaciones de la comunidad</a></li>
               <li><a href="#">Vistos recientemente</a></li>
               <li><a href="#">Mentores de Steam</a></li>

@@ -5,11 +5,12 @@ import Product from './pages/product/product';
 import Cart from './pages/carrito/carrito';
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { AuthProvider } from './assets/contexts/loginContext';
-
+import {CartProvider} from './assets/contexts/CartContext';
 
 const App = () => {
   return (
     <AuthProvider>
+    <CartProvider>
     <Router>
       <Routes>
         {/* Página principal con la lista de juegos */}
@@ -21,6 +22,7 @@ const App = () => {
         <Route path='/Cart' element={<Cart></Cart>}></Route>
       </Routes>
     </Router>
+    </CartProvider>
     </AuthProvider>
 
   );

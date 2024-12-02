@@ -1,0 +1,66 @@
+
+/* Estilo para el layout general */
+.main-content {
+    flex-direction: row;
+    min-height: 100vh; /* Altura mínima para ocupar toda la pantalla */
+    gap: 20px; /* Espaciado entre columnas */
+    padding: 20px; /* Espaciado interno */
+    box-sizing: border-box; /* Incluye el padding en el tamaño total */
+  }
+  
+  .left-sidebar,
+  .right-sidebar {
+    flex: 1; /* Ocupa el mismo espacio por defecto */
+
+    border-radius: 8px;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+  
+  .center-content {
+    display: absolute;
+    flex: 3; 
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  
+  
+  aside {
+    min-width: 200px;
+    max-width: 300px;
+  }
+  
+  /* Ajustes para el Navigationbar */
+  .navigation-bar {
+    color: white;
+    padding: 10px 20px;
+    border-radius: 8px;
+    align-items: center;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3); /* Agrega sombra para relieve */
+  }
+  
+ 
+  .navigation-bar ul li a:hover {
+    background-color: #394854;
+    color: white;
+  }
+  
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column;
+    }
+  
+    .left-sidebar,
+    .right-sidebar {
+      display: none; /* Oculta las barras laterales en pantallas pequeñas */
+    }
+  
+    .center-content {
+      flex: 1;
+    }
+  }
+  

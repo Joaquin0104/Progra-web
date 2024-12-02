@@ -1,12 +1,50 @@
 import React from "react";
-import "../styles/BuyBox.css"; 
+import { useCart } from "../assets/contexts/CartContext";
+import "../styles/BuyBox.css";
 
 const BuyBox = ({ game }) => {
+  const { cart, addToCart } = useCart();
+
   if (!game || !game.price_overview) {
     return <div className="buybox-empty">Información del precio no disponible</div>;
   }
 
   const { final_formatted, discount_percent, initial_formatted } = game.price_overview;
+
+  const isInCart = cart.some((item) => item.name === game.name);
+
+  const handleAddToCart = () => {
+    const cleanPrice = final_formatted.replace(/[^0-9,]/g, ""); 
+  
+    let normalizedPrice;
+  
+    if (cleanPrice.includes(",") && cleanPrice.includes(".")) {
+      normalizedPrice = parseFloat(cleanPrice.replace(".", "").replace(",", "."));
+    } else if (cleanPrice.includes(",")) {
+      normalizedPrice = parseFloat(cleanPrice.replace(",", "."));
+    } else {
+      normalizedPrice = parseFloat(cleanPrice);
+    }
+
+    if (isNaN(normalizedPrice)) {
+      console.error("Error al procesar el precio:", cleanPrice);
+      return;
+    }
+  
+   
+    addToCart({
+      id: game.id,
+      name: game.name,
+      price: normalizedPrice,
+      discount: discount_percent,
+      image: game.header_image || "",
+    });
+  
+    console.log(`Juego añadido al carrito: ${game.name}, Precio: ${normalizedPrice}`);
+    console.log(`Juego añadido al carrito: ${game.name}, Precio: ${game.id}`);
+  };
+  
+  
 
   return (
     <div className="buybox-container">
@@ -25,9 +63,16 @@ const BuyBox = ({ game }) => {
         <span className="buybox-initial-price">{initial_formatted}</span>
         <span className="buybox-final-price">{final_formatted}</span>
       </div>
-      <button className="buybox-button">Agregar al carrito</button>
+      <button
+        className={`buybox-button ${isInCart ? "in-cart" : ""}`}
+        onClick={handleAddToCart}
+        disabled={isInCart}
+      >
+        {isInCart ? "En el carrito" : "Agregar al carrito"}
+      </button>
     </div>
   );
 };
+
 
 export default BuyBox;

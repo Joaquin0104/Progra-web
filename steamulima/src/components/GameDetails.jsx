@@ -82,11 +82,15 @@ const GameDetails = ({ game }) => {
       <div className="game-ratings">
           <p>Recomendado por: {game.recommendations?.total || "N/A"} usuarios</p>
           <p>Metacritic: {game.metacritic?.score || "N/A"}</p>
-        </div>
+      </div>
       <p className="game-release-date">
           Fecha de lanzamiento: {game.release_date?.date || "Desconocida"}
-        </p>
-
+      </p>
+      <div className="game-pricing">
+        <p>Desarrollador: {game.developers?.join(", ") || "No disponible"}</p>
+        <p>Editor: {game.publishers?.join(", ") || "No disponible"}</p>
+      </div>
+      
       {/* Etiquetas y detalles adicionales */}
       <div className="game-details-info">
         <div className="game-tags">

@@ -10,6 +10,29 @@ import Sidebar from '../../components/Sidebar';
 const Home = () => {
   return (
     <>
+            <div className="conatiner-botones" style={{display: "flex", justifyContent: "flex-end", marginTop: "60px", padding: "0 20px"}}> 
+          <button className="boton1" style={{
+            backgroundColor: "#007bff",
+            color: "white",
+            border: "none",
+            padding: "10px 20px",
+            marginLeft: "10px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            fontSize: "16px",
+            transition: "background-color 0.3s ease"}}>Lista de Desedos</button>
+          <button className="boton2" style={{
+            backgroundColor: "green",
+            color: "white ",
+            border: "2px solid green",
+            padding: "10px 20px",
+            marginLeft: "10px",
+            borderRadius: "5px",
+            cursor: "pointer",
+            fontSize: "16px",
+            transition: "background-color 0.3s ease"
+          }}>Carrito</button>
+        </div>
       <Header />
       <main className="main-content">
         <aside className="left-sidebar">

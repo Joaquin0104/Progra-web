@@ -47,6 +47,9 @@ const Navigationbar = () => {
       };
       
     return (
+
+      <>
+        
         <nav className="navigation-bar">
         <ul className="nav-links">
           <li className="dropdown">
@@ -114,6 +117,7 @@ const Navigationbar = () => {
             )}
             </div>
         </nav>
+        </>
     );
   };  
   

@@ -1,9 +1,5 @@
 import React, { createContext, useContext, useState } from "react";
-
-// Crear el contexto
 const AuthContext = createContext();
-
-// Hook personalizado para usar el contexto
 export const useAuth = () => {
   const context = useContext(AuthContext);
   if (!context) {
@@ -11,26 +7,20 @@ export const useAuth = () => {
   }
   return context;
 };
-
-// Proveedor del contexto
 export const AuthProvider = ({ children }) => {
-  const [user, setUser] = useState(null); // Estado para el usuario logueado
-
-  // Función para iniciar sesión
+  const [user, setUser] = useState(null);
   const login = (username) => {
-    setUser({ username }); // Guarda el usuario en el estado
+    setUser({ username}); 
     console.log(`Usuario logueado: ${username}`);
   };
-
-  // Función para cerrar sesión
   const logout = () => {
-    setUser(null); // Limpia el estado del usuario
+    setUser(null);
     console.log("Sesión cerrada");
   };
 
   return (
     <AuthContext.Provider value={{ user, login, logout }}>
-      {children} {/* Renderiza los hijos del contexto */}
+      {children} 
     </AuthContext.Provider>
   );
 };

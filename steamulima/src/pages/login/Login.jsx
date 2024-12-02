@@ -1,44 +1,41 @@
 import React, { useState } from "react";
 import { useAuth } from "../../assets/contexts/loginContext"
-import "../../styles/login.css"; // Asegúrate de que este archivo exista
+import "../../styles/login.css"; 
 import Header from "../../layouts/header";
+import { useNavigate } from "react-router-dom";
+import Footer  from "../../layouts/footer";
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
-
   const { login } = useAuth();
-
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-
     if (username.trim() === "") {
       setError("Por favor, ingresa un nombre de usuario.");
       return;
     }
-
     if (password.trim() === "") {
       setError("Por favor, ingresa tu contraseña.");
       return;
     }
-
     login(username); 
-    setError("");
     alert(`¡Bienvenido, ${username}!`);
+    navigate("/")
   };
-
   return (
     <div>
     <Header/>
     <div className="login-page">
       <div className="login-container">
-        <h2>Inicio de Sesión</h2>
+        <h2>INICIO DE SESION </h2>
         <form onSubmit={handleSubmit} className="login-form">
           <label htmlFor="username">Usuario</label>
           <input
             id="username"
             type="text"
-            placeholder="Ingresa tu nombre de usuario"
+            placeholder="Ingresa tu Usuario"
             value={username}
             onChange={(e) => setUsername(e.target.value)}
           />
@@ -55,6 +52,7 @@ const Login = () => {
         </form>
       </div>
     </div>
+    <Footer/>
     </div>
   );
 };

@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from 'react';
 import '../styles/globals.css'; 
 import { useNavigate } from "react-router-dom";
-
-
-
+import { useAuth } from '../assets/contexts/loginContext';
 
 const Header = () => {
 
   const navigate = useNavigate();
+  const {user,logout} = useAuth();
 
   const handleClick  = () => {
     navigate(`/`);
   };
 
+  const handleLogout = () => {
+    logout();
+    alert("Se cerro Sesion")
+    navigate('/')
+  }
     return (
         <header class="steam-header">
         <div class="logo">
@@ -25,12 +29,25 @@ const Header = () => {
           <a href="#">SOPORTE</a>
         </nav>
         <div class="user-actions">
-          <button class="install-btn">Iniciar Sesión</button>
+          {user ? (
+            <div>
+              <span>{user.username}</span> 
+              <button className="logout-btn" onClick={handleLogout}>
+              Cerrar Sesión
+            </button>
+            </div>
+          ) :
+          (
+           <button className="install-btn" onClick={() => navigate(`/login`)}>
+            Iniciar Sesión
+          </button>
+        )}
           <span>Registrarse</span>
           <span>|</span>
           <span>idioma <i class="arrow-down"></i></span>
         </div>
-      </header>
+      </header>    
+
     );
   };
   

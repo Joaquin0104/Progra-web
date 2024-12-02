@@ -1,94 +1,105 @@
+/* General */
 body {
-    margin: 0;
-    background-color: #1b2838; /* Fondo similar al de Steam */
-  }
-  
-  .steam-header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%; /* Asegura que el header ocupe todo el ancho */
-    display: flex;
-    justify-content: space-between; /* Espaciado uniforme entre logo, nav-links, y user-actions */
-    align-items: center; /* Centra verticalmente los elementos */
-    padding: 10px 40px; /* Ajusta el padding para evitar desbalance */
-    background-color: #171d25; /* Fondo del header */
-    color: white;
-    font-family: Arial, sans-serif;
-    z-index: 1000; /* Asegura que el header esté siempre encima de otros elementos */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra para dar relieve */
-  }
-  
-  .nav-links {
-    display: flex;
-    justify-content: center; /* Centra horizontalmente los enlaces dentro del contenedor */
-    gap: 20px; /* Espacio uniforme entre los enlaces */
-    flex: 1; /* Hace que el nav ocupe espacio entre logo y user-actions */
-  }
-  
-  .nav-links a {
-    text-decoration: none;
-    color: white;
-    font-size: 18px;
-    font-weight: bold;
-  }
-  
-  .nav-links a.active {
-    color: #5cacee; /* Color azul para el enlace activo */
-    text-decoration: underline;
-  }
-  
-  .logo {
-    margin-right: auto; /* Empuja el logo hacia la izquierda */
-    
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Previene desbordamiento horizontal */
+  background-color: #1b2838; /* Fondo similar al de Steam */
+  box-sizing: border-box; /* Asegura que padding y border se incluyan en el ancho/alto */
 }
 
-  .logo img {
-    height: 40px;
-  }
-  
-  .user-actions {
-    display: flex;
-    align-items: center;
-    top: 0;
-    gap: 10px;
-    margin-left: auto; /* Empuja las acciones hacia la derecha */
-    align-self: flex-start; /* Alinea el nav arriba dentro del header */
-    margin-top: 0;
-  }
-  
-  .install-btn {
-    background-color: #5c941f;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .install-btn:hover {
-    background-color: #6bbd26; /* Cambia el color al pasar el cursor */
-  }
-  
-  .arrow-down {
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    display: inline-block;
-    padding: 3px;
-    transform: rotate(45deg);
-    margin-left: 5px;
-  }
-  
-  /* General Layout */
+/* Aplica box-sizing a todos los elementos */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+/* Header */
+.steam-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  background-color: #171d25;
+  color: white;
+  font-family: Arial, sans-serif;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Nav Links */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.nav-links a.active {
+  color: #5cacee;
+  text-decoration: underline;
+}
+
+/* Logo */
+.logo {
+  margin-right: auto;
+}
+
+.logo img {
+  height: 40px;
+}
+
+/* User Actions */
+.user-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-left: auto;
+}
+
+.install-btn {
+  background-color: #5c941f;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.install-btn:hover {
+  background-color: #6bbd26;
+}
+
+.arrow-down {
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  display: inline-block;
+  padding: 3px;
+  transform: rotate(45deg);
+  margin-left: 5px;
+}
+
+/* Layout */
 .layout {
   display: flex;
   flex-direction: column;
-  height: 100vh; /* Asegura que use toda la altura de la ventana */
+  height: 100vh;
 }
 
 /* Header */
 header {
-  flex-shrink: 0; /* El header mantiene su tamaño fijo */
+  flex-shrink: 0;
   background-color: #1b2838;
 }
 
@@ -96,21 +107,16 @@ header {
 footer {
   background-color: #1b2838;
   color: #c7d5e0;
-  top: 0;
-  left: 0;
 }
+
+/* Footer General */
 .footer {
-  top: 0;
-  left: 0;
-  right: 0;
-  display:absolute;
-  padding: 10px 40px; 
-  background-color: #171d25; 
+  width: 100%;
+  padding: 10px 40px;
+  background-color: #171d25;
   color: white;
   font-family: Arial, sans-serif;
-  z-index: 1000; 
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-  
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .footer a {
@@ -122,15 +128,14 @@ footer {
   text-decoration: underline;
 }
 
-/* Sección superior del footer */
+/* Footer Top Section */
 .footer-top {
   text-align: center;
   margin-bottom: 20px;
-  width: 100%;
 }
 
 .footer-logo img {
-  width: 100px; /* Ajusta el tamaño del logo */
+  width: 100px;
   margin-bottom: 10px;
 }
 
@@ -139,24 +144,15 @@ footer {
   line-height: 1.5;
 }
 
-/* Sección inferior del footer */
-.footer-bottom {
-  border-top: 1px solid #39454f;
-  padding-top: 10px;
-}
-
+/* Footer Links */
 .footer-links {
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* Permite que las líneas se ajusten */
+  flex-wrap: wrap;
   list-style: none;
   margin: 0;
   padding: 0;
-  gap: 15px; /* Espaciado entre los elementos */
-}
-
-.footer-links li {
-  margin: 0;
+  gap: 15px;
 }
 
 .footer-links a {
@@ -164,51 +160,46 @@ footer {
 }
 
 .footer-links a:hover {
-  color: #ffffff; /* Color blanco al pasar el mouse */
+  color: #ffffff;
 }
 
-
-/* Contenido principal */
+/* Main Content */
 .main-content {
-  flex-grow: 1; /* Ocupa el espacio restante entre el header y el footer */
+  flex-grow: 1;
   display: flex;
-  flex-direction: row; /* Alinea las columnas horizontalmente */
+  flex-direction: row;
+  width: 100%; /* Asegura que no se desborde */
+  max-width: 100vw; /* Limita el ancho al viewport */
 }
 
-/* Columnas */
-.left-sidebar {
-  flex: 20; /* Representa el 13% del ancho */
+/* Sidebars and Center Content */
+.left-sidebar,
+.right-sidebar {
+  flex: 20%;
   color: white;
   padding: 20px;
-  box-sizing: border-box; /* Incluye padding en el ancho total */
+  box-sizing: border-box;
 }
 
 .center-content {
-  flex: 60; /* Representa el 70% del ancho */
+  flex: 60%;
   color: white;
   padding: 20px;
   box-sizing: border-box;
 }
 
-.right-sidebar {
-  flex: 20; /* Representa el 13% del ancho */
-  color: white;
-  padding: 20px;
-  box-sizing: border-box;
-}
-
-/* Responsividad */
+/* Responsive */
 @media (max-width: 768px) {
   .main-content {
-    flex-direction: column; /* Las columnas se apilan en dispositivos pequeños */
+    flex-direction: column;
   }
 
   .left-sidebar,
   .right-sidebar {
-    flex: 100; /* Ocupan todo el ancho */
+    flex: 100%;
   }
 
   .center-content {
-    flex: 100; /* También ocupa todo el ancho */
+    flex: 100%;
   }
 }

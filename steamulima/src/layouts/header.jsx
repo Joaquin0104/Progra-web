@@ -44,8 +44,6 @@ const Header = () => {
           </button>
         )}
           <span>Registrarse</span>
-          <span>|</span>
-          <span>idioma <i class="arrow-down"></i></span>
         </div>
       </header>    
 

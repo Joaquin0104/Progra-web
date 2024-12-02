@@ -25,7 +25,6 @@ const Home = () => {
         <aside className="right-sidebar"></aside>
       </main>
       <Footer/>
-      
     </>
   );
 };
